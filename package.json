@@ -1,0 +1,16 @@
+{
+  "name": "backbone-sortable-collection",
+  "description": "",
+  "version": "0.0.1",
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/golmansax/backbone-sortable-collection.git"
+  },
+  "devDependencies": {
+    "jscs": "latest",
+    "jshint": "latest"
+  },
+  "dependencies": {
+    "backbone": "latest"
+  }
+}
