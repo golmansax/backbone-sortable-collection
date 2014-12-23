@@ -1,0 +1,18 @@
+{
+  "preset": "google",
+  "excludeFiles": ["node_modules/**", "vendor/**"],
+
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  },
+
+  "disallowTrailingComma": true,
+
+  "disallowSpacesInAnonymousFunctionExpression": null,
+
+  "disallowSpacesInsideObjectBrackets": null,
+
+  "requireSpacesInsideObjectBrackets": "allButNested",
+
+  "disallowMultipleVarDecl": "exceptUndefined"
+}

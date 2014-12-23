@@ -5,7 +5,7 @@ var _ = require('underscore');
 describe('backbone_sortable_collection', function () {
   'use strict';
 
-  var leo, raf, don, mike, defaultOptions, createTurtles;
+  var leo, raf, don, mike, createTurtles;
 
   beforeEach(function () {
     leo = { initial: 'L', food: 'rice', numWeapons: 2 };
@@ -15,13 +15,17 @@ describe('backbone_sortable_collection', function () {
 
     var defaultOptions = {
       comparators: {
-        initial: function (turtle) { return turtle.get('initial') },
-        food: function (turtle) { return turtle.get('food') },
-        numWeapons: function (turtle) { return turtle.get('numWeapons') },
+        initial: function (turtle) { return turtle.get('initial'); },
+        food: function (turtle) { return turtle.get('food'); },
+        numWeapons: function (turtle) { return turtle.get('numWeapons'); },
         weird: function (turtleA, turtleB) {
-          if (turtleA.get('initial') === 'M') { return -1; }
-          else if (turtleB.get('initial') === 'M') { return 1; }
-          else { return 0; }
+          if (turtleA.get('initial') === 'M') {
+            return -1;
+          } else if (turtleB.get('initial') === 'M') {
+            return 1;
+          } else {
+            return 0;
+          }
         }
       }
     };
