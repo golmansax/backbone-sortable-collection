@@ -6,7 +6,8 @@
 ## Sample Usage
 ```js
 var TurtleCollection = Backbone.SortableCollection.extend({
-  defaultSort: 'initial',
+
+  // Sorts are named by the key in this object
   comparators: {
     initial: function (turtle) { return turtle.get('initial'); },
     food: function (food) { return turtle.get('food'); },
@@ -19,7 +20,10 @@ var TurtleCollection = Backbone.SortableCollection.extend({
         return 0;
       }
     }
-  }
+  },
+  
+  // Sorts can be called by name, or as an object with name and dir ('asc' or 'desc')
+  defaultSort: 'initial' // or { name: 'initial', dir: 'desc' }
 });
 
 var turtles = new TurtleCollection([
@@ -29,6 +33,7 @@ var turtles = new TurtleCollection([
   { initial: 'M', food: 'pizza' }
 ]);
 
+// Default sort is active
 console.log(turtles.pluck('initial')); // ['D', 'L', 'M', 'R']
 
 // Single sort
