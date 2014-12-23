@@ -15,7 +15,8 @@
     "istanbul": "latest",
     "jscs": "latest",
     "jshint": "latest",
-    "mocha": "latest"
+    "mocha": "latest",
+    "sinon": "latest"
   },
   "dependencies": {
     "backbone": "latest",

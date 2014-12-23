@@ -10,7 +10,7 @@ var TurtleCollection = Backbone.SortableCollection.extend({
   comparators: {
     initial: function (turtle) { return turtle.get('initial'); },
     food: function (food) { return turtle.get('food'); },
-    weird: function (turtleA, turtleB) {                                    
+    weird: function (turtleA, turtleB) {
       if (turtleA.get('initial') === 'M') {
         return -1;
       } else if (turtleB.get('initial') === 'M') {
@@ -31,9 +31,24 @@ var turtles = new TurtleCollection([
 
 console.log(turtles.pluck('initial')); // ['D', 'L', 'M', 'R']
 
+// Single sort
 turtles.changeSort('food');
 console.log(turtles.pluck('initial')); // ['R', 'D', 'M', 'L']
 
+// Bi-directional multi-sort
 turtles.changeSort([{ name: 'weird', dir: 'desc' }, 'initial']);
 console.log(turtles.pluck('initial')); // ['D', 'L', 'R', 'M']
+
+// Fires sort event
+turtes.on('sort', function () { console.log('Sorting!'); });
+turtles.changeSort('initial'); // Sorting!
+```
+
+## Installation
+```bash
+# Node
+npm install backbone-sortable-collection
+
+# Bower
+bower install backbone-sortable-collection
 ```

@@ -1,6 +1,7 @@
 var expect = require('chai').expect;
 var SortableCollection = require('../lib/backbone_sortable_collection');
 var _ = require('underscore');
+var sinon = require('sinon');
 
 describe('backbone_sortable_collection', function () {
   'use strict';
@@ -85,6 +86,13 @@ describe('backbone_sortable_collection', function () {
       expect(function () {
         turtles.changeSort({ direction: 'upside down' });
       }).to.throw('Sort direction must be either \'asc\' or \'desc\'');
+    });
+
+    it('fires a sort event', function () {
+      var sortSpy = sinon.spy();
+      turtles.on('sort', sortSpy);
+      turtles.changeSort('initial');
+      expect(sortSpy.called).to.be.true();
     });
   });
 });
