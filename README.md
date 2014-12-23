@@ -47,7 +47,7 @@ turtles.changeSort('initial'); // Sorting!
 ## Installation
 ```bash
 # Node
-npm install backbone-sortable-collection
+npm install backbone-sortable-collection --save
 
 # Bower
 bower install backbone-sortable-collection
