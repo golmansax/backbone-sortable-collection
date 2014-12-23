@@ -30,8 +30,10 @@ var turtles = new TurtleCollection([
 ]);
 
 console.log(turtles.pluck('initial')); // ['D', 'L', 'M', 'R']
+
 turtles.changeSort('food');
 console.log(turtles.pluck('initial')); // ['R', 'D', 'M', 'L']
+
 turtles.changeSort([{ name: 'weird', dir: 'desc' }, 'initial']);
 console.log(turtles.pluck('initial')); // ['D', 'L', 'R', 'M']
 ```
