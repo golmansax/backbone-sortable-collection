@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "chai": "^1.10.0",
+    "coveralls": "latest",
     "istanbul": "latest",
     "jscs": "latest",
     "jshint": "latest",

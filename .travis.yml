@@ -4,6 +4,7 @@ script:
 - jscs .
 - jshint . --exclude-path .gitignore
 - npm test
+- npm coveralls
 cache:
   directories:
   - node_modules
