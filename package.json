@@ -16,7 +16,8 @@
     "jscs": "latest",
     "jshint": "latest",
     "mocha": "latest",
-    "sinon": "latest"
+    "sinon": "latest",
+    "travis-lint": "latest"
   },
   "dependencies": {
     "backbone": "latest",
