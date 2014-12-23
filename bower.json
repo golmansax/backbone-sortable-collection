@@ -1,0 +1,24 @@
+{
+  "name": "backbone-sortable-collection",
+  "description": "Add sorting functionalites to Backbone Collections",
+  "license": "MIT",
+  "authors": ["Holman Gao <holman@golmansax.com>"],
+  "version": "0.0.1",
+  "main": "lib/backbone_sortable_collection.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/golmansax/backbone-sortable-collection.git"
+  },
+  "ignore": [
+    "test/",
+    "Makefile",
+    "coverage",
+    ".jshintrc",
+    ".jscsrc",
+    ".travis.yml"
+  ],
+  "dependencies": {
+    "backbone": "latest",
+    "underscore": "latest"
+  }
+}
