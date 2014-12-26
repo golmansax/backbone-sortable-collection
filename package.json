@@ -3,7 +3,7 @@
   "description": "Add sorting functionalites to Backbone Collections",
   "license": "MIT",
   "author": "Holman Gao <holman@golmansax.com>",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/backbone_sortable_collection.js",
   "repository": {
     "type": "git",
