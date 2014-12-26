@@ -50,8 +50,7 @@ describe('backbone_sortable_collection', function () {
     });
 
     it('sorts with direction in if provided', function () {
-      var sort = { name: 'initial', dir: 'desc' };
-      var turtles = createTurtles({ defaultSort: sort });
+      var turtles = createTurtles({ defaultSort: { initial: 'desc' }});
       expect(turtles.pluck('initial')).to.deep.equal(['R', 'M', 'L', 'D']);
     });
   });
@@ -66,12 +65,12 @@ describe('backbone_sortable_collection', function () {
       expect(turtles.pluck('initial')).to.deep.equal(['D', 'L', 'M', 'R']);
     });
 
-    it('can multi-sort with both types of comparators', function () {
-      turtles.changeSort(['food', { name: 'weird', dir: 'desc' }]);
+    it('can multi-sort with directions', function () {
+      turtles.changeSort(['food', { weird: 'desc' }]);
       expect(turtles.pluck('initial')).to.deep.equal(['R', 'D', 'M', 'L']);
     });
 
-    it('can multi-sort with directions', function () {
+    it('can multi-sort with both types of comparators', function () {
       turtles.changeSort(['numWeapons', 'weird', 'food']);
       expect(turtles.pluck('initial')).to.deep.equal(['D', 'M', 'R', 'L']);
     });
@@ -84,8 +83,16 @@ describe('backbone_sortable_collection', function () {
 
     it('throws an error if the direction is not valid', function () {
       expect(function () {
-        turtles.changeSort({ direction: 'upside down' });
+        turtles.changeSort({ initial: 'upside down' });
       }).to.throw('Sort direction must be either \'asc\' or \'desc\'');
+    });
+
+    it('throws an error if an object is given in wrong format', function () {
+      var expectedError = 'Following should be in format of ' +
+        '{ comparatorName: sortDirection }: {}';
+      expect(function () {
+        turtles.changeSort({});
+      }).to.throw(expectedError);
     });
 
     it('fires a sort event', function () {

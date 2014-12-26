@@ -21,9 +21,9 @@ var TurtleCollection = Backbone.SortableCollection.extend({
       }
     }
   },
-  
-  // Sorts can be called by name, or as an object with name and dir ('asc' or 'desc')
-  defaultSort: 'initial' // or { name: 'initial', dir: 'desc' }
+
+  // Sorts can be called by name, or as an object with name => dir ('asc' or 'desc')
+  defaultSort: 'initial' // or { initial: 'desc' }
 });
 
 var turtles = new TurtleCollection([
@@ -41,7 +41,7 @@ turtles.changeSort('food');
 console.log(turtles.pluck('initial')); // ['R', 'D', 'M', 'L']
 
 // Bi-directional multi-sort
-turtles.changeSort([{ name: 'weird', dir: 'desc' }, 'initial']);
+turtles.changeSort([{ weird: 'desc' }, 'initial']);
 console.log(turtles.pluck('initial')); // ['D', 'L', 'R', 'M']
 
 // Fires sort event
