@@ -47,6 +47,10 @@ console.log(turtles.pluck('initial')); // ['D', 'L', 'R', 'M']
 // Fires sort event
 turtes.on('sort', function () { console.log('Sorting!'); });
 turtles.changeSort('initial'); // Sorting!
+
+// Reverse sort (also fires sort event)
+turtles.reverseSort(); // Sorting!
+console.log(turtles.pluck('initial')); // ['M', 'R', 'L', 'D']
 ```
 
 ## Installation
