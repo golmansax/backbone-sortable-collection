@@ -101,5 +101,34 @@ describe('backbone_sortable_collection', function () {
       turtles.changeSort('initial');
       expect(sortSpy.called).to.be.true();
     });
+
+    it('resets whether sort is reversed', function () {
+      turtles.changeSort('initial');
+      turtles.reverseSort();
+      turtles.changeSort('initial');
+      expect(turtles.pluck('initial')).to.deep.equal(['D', 'L', 'M', 'R']);
+    });
+  });
+
+  describe('#reverseSort', function () {
+    var turtles;
+
+    beforeEach(function () {
+      turtles = createTurtles({ defaultSort: 'initial' });
+    });
+
+    it('reverses the sort', function () {
+      turtles.reverseSort();
+      expect(turtles.pluck('initial')).to.deep.equal(['R', 'M', 'L', 'D']);
+      turtles.reverseSort();
+      expect(turtles.pluck('initial')).to.deep.equal(['D', 'L', 'M', 'R']);
+    });
+
+    it('fires a sort event', function () {
+      var sortSpy = sinon.spy();
+      turtles.on('sort', sortSpy);
+      turtles.reverseSort();
+      expect(sortSpy.called).to.be.true();
+    });
   });
 });
