@@ -5,7 +5,7 @@ script:
 - jscs .
 - jshint . --exclude-path .gitignore
 - npm test
-- make coveralls
+- make codeclimate
 cache:
   directories:
   - node_modules
