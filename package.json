@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "chai": "latest",
-    "coveralls": "latest",
+    "codeclimate-test-reporter": "latest",
     "istanbul": "latest",
     "jscs": "latest",
     "jshint": "latest",

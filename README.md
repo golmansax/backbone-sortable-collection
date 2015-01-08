@@ -1,7 +1,8 @@
 # Backbone Sortable Collection
 
 [![Build Status](https://travis-ci.org/golmansax/backbone-sortable-collection.svg?branch=master)](https://travis-ci.org/golmansax/backbone-sortable-collection)
-[![Coverage Status](https://img.shields.io/coveralls/golmansax/backbone-sortable-collection.svg)](https://coveralls.io/r/golmansax/backbone-sortable-collection?branch=master)
+[![Code Climate](https://codeclimate.com/github/golmansax/backbone-sortable-collection/badges/gpa.svg)](https://codeclimate.com/github/golmansax/backbone-sortable-collection)
+[![Test Coverage](https://codeclimate.com/github/golmansax/backbone-sortable-collection/badges/coverage.svg)](https://codeclimate.com/github/golmansax/backbone-sortable-collection)
 
 ## Sample Usage
 ```js
