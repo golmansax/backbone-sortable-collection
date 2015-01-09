@@ -13,7 +13,7 @@ var TurtleCollection = Backbone.SortableCollection.extend({
     initial: function (turtle) { return turtle.get('initial'); },
 
     // shorthand for function (food) { return turtle.get('food'); },
-    food: 'get'
+    food: 'getter'
 
     weird: function (turtleA, turtleB) {
       if (turtleA.get('initial') === 'M') {

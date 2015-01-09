@@ -17,7 +17,7 @@ describe('backbone_sortable_collection', function () {
     var defaultOptions = {
       comparators: {
         initial: function (turtle) { return turtle.get('initial'); },
-        food: 'get',
+        food: 'getter',
         numWeapons: function (turtle) { return turtle.get('numWeapons'); },
         weird: function (turtleA, turtleB) {
           if (turtleA.get('initial') === 'M') {
