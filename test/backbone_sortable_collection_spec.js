@@ -28,6 +28,9 @@ describe('backbone_sortable_collection', function () {
             return 0;
           }
         }
+      },
+      sorts: {
+        'numWeapons': ['numWeapons', { weird: 'desc' }, 'initial']
       }
     };
 
@@ -76,8 +79,8 @@ describe('backbone_sortable_collection', function () {
     });
 
     it('can multi-sort with both types of comparators', function () {
-      turtles.changeSort(['numWeapons', 'weird', 'food']);
-      expect(turtles.pluck('initial')).to.deep.equal(['D', 'M', 'R', 'L']);
+      turtles.changeSort('numWeapons');
+      expect(turtles.pluck('initial')).to.deep.equal(['D', 'R', 'L', 'M']);
     });
 
     it('throws an error if the comparator is not set', function () {

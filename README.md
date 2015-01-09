@@ -8,7 +8,7 @@
 ```js
 var TurtleCollection = Backbone.SortableCollection.extend({
 
-  // Sorts are named by the key in this object
+  // Comparators are named by the key in this object
   comparators: {
     initial: function (turtle) { return turtle.get('initial'); },
 
@@ -26,8 +26,17 @@ var TurtleCollection = Backbone.SortableCollection.extend({
     }
   },
 
-  // Sorts can be called by name, or as an object with name => dir ('asc' or 'desc')
-  defaultSort: 'initial' // or { initial: 'desc' }
+  // Sorts can be used to string comparators together for multi-sort
+  // Useful for specifying fallback comparators and default behavior
+  sorts: {
+    // Comparators can be called by name, or as an object with name => dir ('asc' or 'desc')
+    weird: [{ weird: 'desc' }, 'initial'],
+
+    // By default, sort only uses the comparator, so following line is redundant
+    // initial: ['initial']
+  },
+
+  defaultSort: 'initial'
 });
 
 var turtles = new TurtleCollection([
@@ -45,7 +54,8 @@ turtles.changeSort('food');
 console.log(turtles.pluck('initial')); // ['R', 'D', 'M', 'L']
 
 // Bi-directional multi-sort
-turtles.changeSort([{ weird: 'desc' }, 'initial']);
+turtles.changeSort('weird');
+// turtles.changeSort([{ weird: 'desc' }, 'initial']); would achieve same result
 console.log(turtles.pluck('initial')); // ['D', 'L', 'R', 'M']
 
 // Fires sort event
