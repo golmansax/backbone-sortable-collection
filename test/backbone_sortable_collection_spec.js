@@ -74,7 +74,7 @@ describe('backbone_sortable_collection', function () {
     });
 
     it('can multi-sort with directions', function () {
-      turtles.changeSort(['food', '!weird' ]);
+      turtles.changeSort(['food', '!weird']);
       expect(turtles.pluck('initial')).to.deep.equal(['R', 'D', 'M', 'L']);
     });
 
