@@ -30,7 +30,7 @@ describe('backbone_sortable_collection', function () {
         }
       },
       sorts: {
-        'numWeapons': ['numWeapons', { weird: 'desc' }, 'initial']
+        'numWeapons': ['numWeapons', '!weird', 'initial']
       }
     };
 
@@ -53,7 +53,7 @@ describe('backbone_sortable_collection', function () {
     });
 
     it('sorts with direction in if provided', function () {
-      var turtles = createTurtles({ defaultSort: { initial: 'desc' }});
+      var turtles = createTurtles({ defaultSort: '!initial' });
       expect(turtles.pluck('initial')).to.deep.equal(['R', 'M', 'L', 'D']);
     });
   });
@@ -74,7 +74,7 @@ describe('backbone_sortable_collection', function () {
     });
 
     it('can multi-sort with directions', function () {
-      turtles.changeSort(['food', { weird: 'desc' }]);
+      turtles.changeSort(['food', '!weird' ]);
       expect(turtles.pluck('initial')).to.deep.equal(['R', 'D', 'M', 'L']);
     });
 

@@ -29,8 +29,8 @@ var TurtleCollection = Backbone.SortableCollection.extend({
   // Sorts can be used to string comparators together for multi-sort
   // Useful for specifying fallback comparators and default behavior
   sorts: {
-    // Comparators can be called by name, or as an object with name => dir ('asc' or 'desc')
-    weird: [{ weird: 'desc' }, 'initial'],
+    // Comparators can be called by name, prefixed with '!' if the order should be descending
+    weird: ['!weird', 'initial'],
 
     // By default, sort only uses the comparator, so following line is redundant
     // initial: ['initial']
@@ -55,7 +55,7 @@ console.log(turtles.pluck('initial')); // ['R', 'D', 'M', 'L']
 
 // Bi-directional multi-sort
 turtles.changeSort('weird');
-// turtles.changeSort([{ weird: 'desc' }, 'initial']); would achieve same result
+// turtles.changeSort(['!weird', 'initial']); would achieve same result
 console.log(turtles.pluck('initial')); // ['D', 'L', 'R', 'M']
 
 // Fires sort event
