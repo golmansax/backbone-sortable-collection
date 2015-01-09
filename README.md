@@ -11,7 +11,10 @@ var TurtleCollection = Backbone.SortableCollection.extend({
   // Sorts are named by the key in this object
   comparators: {
     initial: function (turtle) { return turtle.get('initial'); },
-    food: function (food) { return turtle.get('food'); },
+
+    // shorthand for function (food) { return turtle.get('food'); },
+    food: 'get'
+
     weird: function (turtleA, turtleB) {
       if (turtleA.get('initial') === 'M') {
         return -1;

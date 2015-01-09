@@ -17,7 +17,7 @@ describe('backbone_sortable_collection', function () {
     var defaultOptions = {
       comparators: {
         initial: function (turtle) { return turtle.get('initial'); },
-        food: function (turtle) { return turtle.get('food'); },
+        food: 'get',
         numWeapons: function (turtle) { return turtle.get('numWeapons'); },
         weird: function (turtleA, turtleB) {
           if (turtleA.get('initial') === 'M') {
@@ -63,6 +63,11 @@ describe('backbone_sortable_collection', function () {
     it('works with sorts on one comparator', function () {
       turtles.changeSort('initial');
       expect(turtles.pluck('initial')).to.deep.equal(['D', 'L', 'M', 'R']);
+    });
+
+    it('supports get comparator', function () {
+      turtles.changeSort('food');
+      expect(turtles.pluck('initial')).to.deep.equal(['R', 'D', 'M', 'L']);
     });
 
     it('can multi-sort with directions', function () {
