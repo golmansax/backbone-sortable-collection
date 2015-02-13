@@ -1,4 +1,6 @@
-var expect = require('chai').expect;
+var chai = require('chai');
+chai.use(require('dirty-chai'));
+var expect = chai.expect;
 var SortableCollection = require('../lib/backbone_sortable_collection');
 var _ = require('underscore');
 var sinon = require('sinon');
