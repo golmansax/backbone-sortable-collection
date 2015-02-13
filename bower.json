@@ -9,13 +9,13 @@
     "type": "git",
     "url": "http://github.com/golmansax/backbone-sortable-collection.git"
   },
-  "keywords": {
+  "keywords": [
     "backbone",
     "sort",
     "collection",
     "reverse",
     "multi-sort"
-  },
+  ],
   "ignore": [
     "test/",
     "Makefile",
