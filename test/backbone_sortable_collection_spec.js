@@ -4,6 +4,7 @@ var expect = chai.expect;
 var SortableCollection = require('../lib/backbone_sortable_collection');
 var _ = require('underscore');
 var sinon = require('sinon');
+chai.use(require('sinon-chai'));
 
 describe('backbone_sortable_collection', function () {
   'use strict';
@@ -109,7 +110,7 @@ describe('backbone_sortable_collection', function () {
       var sortSpy = sinon.spy();
       turtles.on('sort', sortSpy);
       turtles.changeSort('initial');
-      expect(sortSpy.called).to.be.true();
+      expect(sortSpy).to.have.been.called();
     });
 
     it('resets whether sort is reversed', function () {
@@ -138,7 +139,7 @@ describe('backbone_sortable_collection', function () {
       var sortSpy = sinon.spy();
       turtles.on('sort', sortSpy);
       turtles.reverseSort();
-      expect(sortSpy.called).to.be.true();
+      expect(sortSpy).to.have.been.called();
     });
   });
 });
