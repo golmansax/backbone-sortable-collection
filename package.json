@@ -9,6 +9,13 @@
     "type": "git",
     "url": "http://github.com/golmansax/backbone-sortable-collection.git"
   },
+  "keywords": {
+    "backbone",
+    "sort",
+    "collection",
+    "reverse",
+    "multi-sort"
+  },
   "devDependencies": {
     "chai": "latest",
     "codeclimate-test-reporter": "latest",
