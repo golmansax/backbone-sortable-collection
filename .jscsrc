@@ -12,6 +12,8 @@
 
   "disallowSpacesInsideObjectBrackets": null,
 
+  "disallowQuotedKeysInObjects": "allButReserved",
+
   "requireSpacesInsideObjectBrackets": "allButNested",
 
   "disallowMultipleVarDecl": "exceptUndefined"

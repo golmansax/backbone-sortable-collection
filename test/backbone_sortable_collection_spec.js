@@ -33,7 +33,7 @@ describe('backbone_sortable_collection', function () {
         }
       },
       sorts: {
-        'numWeapons': ['numWeapons', '!weird', 'initial']
+        numWeapons: ['numWeapons', '!weird', 'initial']
       }
     };
 
