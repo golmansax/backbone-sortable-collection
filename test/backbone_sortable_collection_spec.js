@@ -12,10 +12,10 @@ describe('backbone_sortable_collection', function () {
   var leo, raf, don, mike, createTurtles;
 
   beforeEach(function () {
-    leo = { initial: 'L', food: 'rice', numWeapons: 2 };
-    raf = { initial: 'R', food: 'cereal', numWeapons: 2 };
-    don = { initial: 'D', food: 'pizza', numWeapons: 1 };
-    mike = { initial: 'M', food: 'pizza', numWeapons: 2 };
+    leo = { initial: 'L', food: 'rice', numWeapons: 2, age: 15.8 };
+    raf = { initial: 'R', food: 'cereal', numWeapons: 2, age: 15.7 };
+    don = { initial: 'D', food: 'pizza', numWeapons: 1, age: 15.5 };
+    mike = { initial: 'M', food: 'pizza', numWeapons: 2, age: 15.3 };
 
     var defaultOptions = {
       comparators: {
@@ -30,10 +30,12 @@ describe('backbone_sortable_collection', function () {
           } else {
             return 0;
           }
-        }
+        },
+        age: 'getter'
       },
       sorts: {
-        numWeapons: ['numWeapons', '!weird', 'initial']
+        numWeapons: ['numWeapons', '!weird', 'initial'],
+        oldest: '!age'
       }
     };
 
@@ -118,6 +120,11 @@ describe('backbone_sortable_collection', function () {
       turtles.reverseSort();
       turtles.changeSort('initial');
       expect(turtles.pluck('initial')).to.deep.equal(['D', 'L', 'M', 'R']);
+    });
+
+    it('works when sort is not an array', function () {
+      turtles.changeSort('oldest');
+      expect(turtles.pluck('initial')).to.deep.equal(['L', 'R', 'D', 'M']);
     });
   });
 

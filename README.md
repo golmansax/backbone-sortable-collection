@@ -13,7 +13,9 @@ var TurtleCollection = Backbone.SortableCollection.extend({
     initial: function (turtle) { return turtle.get('initial'); },
 
     // shorthand for function (food) { return turtle.get('food'); },
-    food: 'getter'
+    food: 'getter',
+
+    age: 'getter',
 
     weird: function (turtleA, turtleB) {
       if (turtleA.get('initial') === 'M') {
@@ -32,6 +34,9 @@ var TurtleCollection = Backbone.SortableCollection.extend({
     // Comparators can be called by name, prefixed with '!' if the order should be descending
     weird: ['!weird', 'initial'],
 
+    // Also sorts can be called as a string if there is only one comparator
+    oldest: '!age'
+
     // By default, sort only uses the comparator, so following line is redundant
     // initial: ['initial']
   },
@@ -40,10 +45,10 @@ var TurtleCollection = Backbone.SortableCollection.extend({
 });
 
 var turtles = new TurtleCollection([
-  { initial: 'L', food: 'rice' },
-  { initial: 'R', food: 'cereal' },
-  { initial: 'D', food: 'pizza' },
-  { initial: 'M', food: 'pizza' }
+  { initial: 'L', food: 'rice', age: 15.8 },
+  { initial: 'R', food: 'cereal', age: 15.7 },
+  { initial: 'D', food: 'pizza', age: 15.5 },
+  { initial: 'M', food: 'pizza', age: 15.3 }
 ]);
 
 // Default sort is active
