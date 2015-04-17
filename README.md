@@ -4,6 +4,8 @@
 [![Code Climate](https://codeclimate.com/github/golmansax/backbone-sortable-collection/badges/gpa.svg)](https://codeclimate.com/github/golmansax/backbone-sortable-collection)
 [![Test Coverage](https://codeclimate.com/github/golmansax/backbone-sortable-collection/badges/coverage.svg)](https://codeclimate.com/github/golmansax/backbone-sortable-collection)
 
+Add robust sorting functionality to Backbone Collections
+
 ## Sample Usage
 ```js
 var TurtleCollection = Backbone.SortableCollection.extend({
