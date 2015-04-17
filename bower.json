@@ -1,6 +1,6 @@
 {
   "name": "backbone-sortable-collection",
-  "description": "Add sorting functionalites to Backbone Collections",
+  "description": "Add robust sorting functionality to Backbone Collections",
   "license": "MIT",
   "authors": ["Holman Gao <holman@golmansax.com>"],
   "main": "lib/backbone_sortable_collection.js",
